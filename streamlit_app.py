@@ -64,6 +64,7 @@ def get_model_pred(sentence, model_folders):
     result = []
     for model_folder in tqdm(model_folders):
         try:
+            print(model_folder)
             fine_tune_sentiment_model = AutoModelForSequenceClassification.from_pretrained('MikeZQZ/%s'%model_folder,
                                                                                                 num_labels=2)
             fine_tune_tokenizer = AutoTokenizer.from_pretrained('MikeZQZ/%s'%model_folder)
@@ -99,6 +100,7 @@ storage = filedb.storage()
 dict_files = ["label_col_dict_p1.pkl","label_col_dict_p2_new.pkl","label_col_dict_p3.pkl"]
 label_dict = get_topic_dict(dict_files)
 model_folders = list(label_dict.keys())
+print(model_folders)
 #model_folders = ['label_1','label_0']
 
 #### start to upload pdf and analysis

@@ -66,7 +66,6 @@ def get_model_pred(sentence, model_folders):
         try:
             fine_tune_sentiment_model = AutoModelForSequenceClassification.from_pretrained('MikeZQZ/%s'%model_folder,
                                                                                                 num_labels=2)
-            print(fine_tune_sentiment_model)
             fine_tune_tokenizer = AutoTokenizer.from_pretrained('MikeZQZ/%s'%model_folder)
             fine_tune_pipeline = TextClassificationPipeline(model=fine_tune_sentiment_model, 
                                                                     tokenizer = fine_tune_tokenizer)
@@ -74,7 +73,8 @@ def get_model_pred(sentence, model_folders):
             rlt = int(fine_tune_pipeline.predict(sentence)[0]['label'].split('_')[-1])
             if rlt == 1:
                 result.append(label_dict[model_folder])
-        except:
+        except Exception as e: 
+            print(e)
             print("%s not exists because no enough data"%model_folder)
             result.append("no enough data for topic : %s"%label_dict[model_folder])
     return '|'.join(result)

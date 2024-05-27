@@ -1,0 +1,20 @@
+{
+  "type": "service_account",
+  "project_id": "robotofficer-8db01",
+  "apiKey": "AIzaSyDp-IX34rFIMuXv3Y8Mb8qrUkD4EPCXqRQ",
+  "private_key_id": "44d1acaf85aeace88fdc2c5c2ec6773c3ed5d310",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDJwVyqkSUaEh34\n2C8cFhWJGewHh5dOtsRcBjmwqg0eD2pd6XBFxKbMwDUF0iGZyR0XC+zsP7LPyfFP\nhL86wsMSE+weKMz2b5+HiyirO5uV6eu8AKARIMimtRFVJA96FSw6/UjNpJe7FTTR\npkIxARUHa53XJtC0oQDBF6oE6dihOEG4pluvtcrxXUhqs/o5BKfegO8QP3KRWQLy\npc8H2iUMykzk3KmGUvAnxRKUBt27CFlJenbIQB9u+BTAxWxRKQkH/gQFSDVoTVOW\nI2Vf7U5yBe7VMu5ngc9N4iI3F4B4VPb4A4tIgxwUZS4E8hsRCJ15en1TkV8UVW2z\nc+tUrO4HAgMBAAECggEAE74NIE+1rrhpIGmfKoNqthDITPBSuQwfaNXfHU92myNt\nCCWIq/sTS2PfjGNEkHTimNe85l1RVQ3wxBQ8VjaqugEjEMxzSgYgOTY/04mwrtnG\nDI6PGz33BIEhYhB2Rz79JgSU9DKP+mmX0pAPWBZABYrdVilhMNu0ZDC5nWN4pEXd\nVNCZ6M9TCPrfWRn2SBp7DVblEfyjOyH4gDrHkh39m0iRW+xRMN+fc8vDIMB/xU6Y\nXusMs1XhqMzJ64TBF3OYgXafivpPz/PUlTv8/yHFyYP7eikcx/ugpJeQZx1SToNa\nLtywfrU59oyCHxBuNmn2dSHiST8m62etvYpRAyaY8QKBgQD5bz+E4TVMV3hZLUuN\nyHlZj1QIMwbIF1uDlgBMNV5whTtZtbUhxByQQ+llvkg0IV/6Thfs1JqcDgAP+uuH\nKgE4NfO8aQg3PxKtSukuzeQSvY73jxHkHaYE72bNV+eLcv3BI4vCd4rZSwXuJUYj\nu105lHnwNzglvMPClqopTYSc7wKBgQDPENbc0WgcOpJURpOuLveFFdBksXtcmpiO\npJG4HjoW6zBlc9PvgBL+T8AYHdA0ubKu1tei4rzTeAYpPxkP+kyVLeNwOUv6FCqK\nd8EMz3sBXzUFKPb3zWAEUpPhwi1ir0oCXayfccY3OBacOSXeEnqdS0z6rtVdfIKS\nwNALBWBwaQKBgQDsZiMtLMP2tm+5FNSma3mXB9/8ZV/oAzsYWvGtSGdY/Oxi+XPR\nrKvljneFlfGYdokgESNbsaNWg25LtuPCFm1ReNCnoGPI+F4bHwQg98FQgZcdyNqL\n+A2AX+RueQFZiII2qhmrFODjT9cu/OScuNaB29Y1dCAio+RkZ6advnoQwQKBgQCO\nJAUauDU7i4l/iKM/4sXO+daACMWiIA2xfY76UOWXbgNe4VAPDF/9a0l2RKD0ULU0\nCA8mpXbxw2aXUdUmfq+riECkfPCGzukU/HftD1Bk9LI0xJYkLTtIPFd/lggJwkKP\ntTYWjcd/iGUdAK3Z791ztIk3XGTjM+F+VBV8O0ikYQKBgQCoB1pUv8lrzQR1q1g4\nwlqIcDHqsWY4h6UQm00AfVnR1+BAf8RYGWHzsKgH4d84xTwjiDobSOz0Z8BQ4hQD\nBmqD3sPNvZ1e7sdnQ+0DaJPbdleMj8idDlwEES92WF4x1l4qZHAVNDUNxnH1+bMl\nX1cf7kTzrNyGuA0q2MmSFefmDw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-rkpmg@robotofficer-8db01.iam.gserviceaccount.com",
+  "storageBucket": "robotofficer-8db01.appspot.com",
+  "client_id": "103782697723123496818",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-rkpmg%40robotofficer-8db01.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com",
+  "authDomain": "robotofficer-8db01.firebaseapp.com",
+  "messagingSenderId": "973766950352",
+  "appId": "1:973766950352:web:d310f07d72b6bed05b4dd5",
+  "measurementId": "G-7X1RWR7XYW",
+  "databaseURL":"https://robotofficer-8db01-default-rtdb.firebaseio.com/"
+}

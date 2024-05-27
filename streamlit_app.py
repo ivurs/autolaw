@@ -9,6 +9,7 @@ from datetime import datetime
 import uuid
 from utils import *
 import os
+from tqdm import tqdm
 
 
 # Authenticate to Firestore with the JSON account key.
@@ -61,20 +62,20 @@ def get_model_summary_vectorize(sentence):
 
 def get_model_pred(sentence, model_folders):
     result = []
-    for model_folder in model_folders:
-        #try:
-        fine_tune_sentiment_model = AutoModelForSequenceClassification.from_pretrained('MikeZQZ/%s'%model_folder,
-                                                                                            num_labels=2)
-        fine_tune_tokenizer = AutoTokenizer.from_pretrained('MikeZQZ/%s'%model_folder)
-        fine_tune_pipeline = TextClassificationPipeline(model=fine_tune_sentiment_model, 
-                                                                tokenizer = fine_tune_tokenizer)
-        #print("%s result: "%model_folder , fine_tune_pipeline.predict('I like python')[0]['label'].split('_')[-1])
-        rlt = int(fine_tune_pipeline.predict(sentence)[0]['label'].split('_')[-1])
-        if rlt == 1:
-            result.append(label_dict[model_folder])
-        #except:
-        #    #print("%s not exists because no enough data"%model_folder)
-            #result.append("no enough data for topic : %s"%label_dict[model_folder])
+    for model_folder in tqdm(model_folders):
+        try:
+            fine_tune_sentiment_model = AutoModelForSequenceClassification.from_pretrained('MikeZQZ/%s'%model_folder,
+                                                                                                num_labels=2)
+            fine_tune_tokenizer = AutoTokenizer.from_pretrained('MikeZQZ/%s'%model_folder)
+            fine_tune_pipeline = TextClassificationPipeline(model=fine_tune_sentiment_model, 
+                                                                    tokenizer = fine_tune_tokenizer)
+            #print("%s result: "%model_folder , fine_tune_pipeline.predict('I like python')[0]['label'].split('_')[-1])
+            rlt = int(fine_tune_pipeline.predict(sentence)[0]['label'].split('_')[-1])
+            if rlt == 1:
+                result.append(label_dict[model_folder])
+        except:
+            print("%s not exists because no enough data"%model_folder)
+            result.append("no enough data for topic : %s"%label_dict[model_folder])
     return '|'.join(result)
 
 
@@ -108,6 +109,7 @@ if uploaded_pdf is not None:
                 local_pdf_file = uploaded_pdf.name
                 doc.save(local_pdf_file)
                 cur_pdf = get_all_sentence_by_file(uploaded_pdf.name, doc)
+                print("%s has been sliced"%local_pdf_file)
                 #v_get_model_summary = np.vectorize(get_model_summary_vectorize)
                 cur_pdf = cur_pdf[cur_pdf['sentence'].astype(str).map(len)>=10].reset_index(drop=True)
                 sentences = list(cur_pdf['sentence'].values)

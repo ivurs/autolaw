@@ -74,8 +74,8 @@ def get_model_pred(sentence, model_folders):
             if rlt == 1:
                 result.append(label_dict[model_folder])
         except Exception as e: 
-            print(e)
-            print("%s not exists because no enough data"%model_folder)
+            #print(e)
+            #print("%s not exists because no enough data"%model_folder)
             result.append("no enough data for topic : %s"%label_dict[model_folder])
     return '|'.join(result)
 

@@ -62,7 +62,7 @@ def get_model_summary_vectorize(sentence):
 
 def get_model_pred(sentence, model_folders):
     result = []
-    for model_folder in tqdm(model_folders):
+    for model_folder in model_folders:
         try:
             fine_tune_sentiment_model = AutoModelForSequenceClassification.from_pretrained('MikeZQZ/%s'%model_folder,
                                                                                                 num_labels=2)
@@ -115,7 +115,7 @@ if uploaded_pdf is not None:
                 cur_pdf = cur_pdf[cur_pdf['sentence'].astype(str).map(len)>=10].reset_index(drop=True)
                 sentences = list(cur_pdf['sentence'].values)
                 cur_pdf_result_ls = []
-                for sentence in sentences:
+                for sentence in tqdm(sentences):
                     cur_pdf_result_ls.append(get_model_pred(sentence, model_folders))
                 #cur_pdf_result = pd.DataFrame(v_get_model_summary(cur_pdf['sentence']), 
                 #                               columns = ['topic_overall_result'])

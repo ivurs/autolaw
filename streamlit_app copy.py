@@ -111,16 +111,16 @@ if uploaded_pdf is not None:
                 doc.save(local_pdf_file)
                 cur_pdf = get_all_sentence_by_file(uploaded_pdf.name, doc)
                 print("%s has been sliced"%local_pdf_file)
-                v_get_model_summary = np.vectorize(get_model_summary_vectorize)
+                #v_get_model_summary = np.vectorize(get_model_summary_vectorize)
                 cur_pdf = cur_pdf[cur_pdf['sentence'].astype(str).map(len)>=10].reset_index(drop=True)
-                #sentences = list(cur_pdf['sentence'].values)
-                #cur_pdf_result_ls = []
-                #for sentence in tqdm(sentences):
-                #    cur_pdf_result_ls.append(get_model_pred(sentence, model_folders))
-                cur_pdf_result = pd.DataFrame(v_get_model_summary(cur_pdf['sentence']), 
-                                               columns = ['topic_overall_result'])
-                #cur_pdf_result = pd.DataFrame(np.array(cur_pdf_result_ls),
-                 #                              columns = ['topic_overall_result']).reset_index(drop=True)
+                sentences = list(cur_pdf['sentence'].values)
+                cur_pdf_result_ls = []
+                for sentence in tqdm(sentences):
+                    cur_pdf_result_ls.append(get_model_pred(sentence, model_folders))
+                #cur_pdf_result = pd.DataFrame(v_get_model_summary(cur_pdf['sentence']), 
+                #                               columns = ['topic_overall_result'])
+                cur_pdf_result = pd.DataFrame(np.array(cur_pdf_result_ls),
+                                               columns = ['topic_overall_result']).reset_index(drop=True)
                 cur_pdf_result['topic_hitted'] = cur_pdf_result['topic_overall_result']\
                     .apply(lambda x : [i for i in x.split("|")
                                         if ('no enough data for topic' not in i) and len(i)>0])
